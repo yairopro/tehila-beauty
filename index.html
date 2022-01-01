@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<title>Tehila Beauty</title>
+	<link rel="shortcut icon" href="./logo.jpg" />
+	<!-- <link rel="manifest" href="./manifest.json"/> -->
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One">
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+
+
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+				'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+				sans-serif;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+
+		}
+
+		body {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			display: flex;
+			flex-direction: column;
+
+			opacity: 0;
+			/* will appear at the end of the js */
+		}
+
+		img,
+		div {
+			display: flex;
+			align-items: stretch;
+			border: 0 solid black;
+			box-sizing: border-box;
+			flex-basis: auto;
+			flex-direction: column;
+			flex-shrink: 0;
+			margin: 0;
+			min-height: 0;
+			min-width: 0;
+			padding: 0;
+			position: relative;
+			z-index: 0;
+		}
+
+		a {
+			text-decoration: none
+		}
+	</style>
+
+</head>
+
+<body>
+	<img src="./logo.jpg" alt="Tehila Beauty"
+		style="height: 80px; width: 80px; border-radius: 40px; align-self: center; margin-top: 100px; margin-bottom: 20px; border-width: 2px; padding: 2px; border-color: pink; object-fit: cover;">
+
+	<h1 id="title" style="font-family: 'Poiret One'; text-align: center; margin: 0;">
+	</h1>
+
+	<h2 id="subtitle" style="text-align: center; margin: 0;">
+	</h2>
+
+	<address id="address" style="text-align: center; margin: 10px">
+	</address>
+
+	<b id="infos" style="text-align: center;">
+	</b>
+
+	<a id="contact">
+	</a>
+
+	<a id="instagram">
+	</a>
+
+
+</body>
+
+
+<script>
+	const allTexts = {
+		fr: {
+			title: "Tehila Beauty",
+			subtitle: "Esthéticienne",
+			address: "Sur Talpiot / Arnona, Jerusalem",
+			infos: "Manucure, pédicure, cils et épilation",
+			contact: "Prendre rendez-vous",
+			instagram: "Voir plus ›"
+		},
+
+		en: {
+			title: "Tehila Beauty",
+			subtitle: "Beautician",
+			address: "At Talpiot / Arnona, Jerusalem",
+			infos: "Nails, waxing & lash-lifting",
+			contact: "Make an appointment",
+			instagram: "See more ›"
+		},
+
+		he: {
+
+		},
+	};
+
+	const language = (() => {
+		const defaultLang = 'en';
+		const acceptedLangs = {
+			en: true,
+			fr: true,
+			he: true,
+		};
+
+		const browserLang = (window.navigator.userLanguage || window.navigator.language)?.split('-')[0];
+		let lang = localStorage.lang || browserLang;
+		if (!acceptedLangs[lang])
+			lang = defaultLang;
+		return lang;
+	})();
+
+
+	document.documentElement.setAttribute("lang", language);
+
+	const texts = allTexts[language];
+
+	Object.entries(texts)
+		.forEach(([id, text]) => document.getElementById(id).innerText = text);
+
+	document.body.style.opacity = 1;
+</script>
+
+</html>
