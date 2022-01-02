@@ -15,6 +15,8 @@
 		body {
 			margin: 0;
 			padding: 0;
+			color: white;
+			background-color: black;
 
 
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -39,6 +41,7 @@
 		}
 
 		img,
+		.flexbox,
 		div {
 			display: flex;
 			align-items: stretch;
@@ -69,21 +72,39 @@
 	<h1 id="title" style="font-family: 'Poiret One'; text-align: center; margin: 0;">
 	</h1>
 
-	<h2 id="subtitle" style="text-align: center; margin: 0;">
+	<h2 id="subtitle" style="text-align: center; margin: 0; font-size: 18px; font-weight: 600; margin-bottom: 25px;">
 	</h2>
 
-	<address id="address" style="text-align: center; margin: 10px">
+	<address id="address"
+		style="text-align: center; margin: 10px; font-style: normal; font-family: monospace; font-size: 14px;">
 	</address>
 
-	<b id="infos" style="text-align: center;">
+	<b id="infos" style="text-align: center; margin-bottom: 20px;">
 	</b>
 
-	<a id="contact">
+	<a class="flexbox"
+		style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; background-image: linear-gradient(to top right, #25D366, #075E54); border-radius: 9px;"
+		href="https://wa.me/972587804232">
+
+		<img src="./whatsapp.png" alt="whatsapp"
+			style="object-fit: cover; height: 30px; width: 30px; margin-right: 20px;">
+
+		<span id="contact" style=" color: white; font-weight: bold;"></span>
 	</a>
 
-	<a id="instagram">
-	</a>
+	<div id="gallery">
+	</div>
 
+
+	<a class="flexbox"
+		style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; border-radius: 9px; background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);"
+		href="https://wa.me/972587804232">
+
+		<img src="./instagram.png" alt="instagram"
+			style="object-fit: cover; height: 30px; width: 30px; margin-right: 20px;">
+
+		<span id="instagram" style=" color: white; font-weight: bold;"></span>
+	</a>
 
 </body>
 
@@ -93,7 +114,7 @@
 		fr: {
 			title: "Tehila Beauty",
 			subtitle: "Esthéticienne",
-			address: "Sur Talpiot / Arnona, Jerusalem",
+			address: "Talpiot / Arnona, Jerusalem",
 			infos: "Manucure, pédicure, cils et épilation",
 			contact: "Prendre rendez-vous",
 			instagram: "Voir plus ›"
@@ -102,7 +123,7 @@
 		en: {
 			title: "Tehila Beauty",
 			subtitle: "Beautician",
-			address: "At Talpiot / Arnona, Jerusalem",
+			address: "Talpiot / Arnona, Jerusalem",
 			infos: "Nails, waxing & lash-lifting",
 			contact: "Make an appointment",
 			instagram: "See more ›"
