@@ -66,46 +66,94 @@
 </head>
 
 <body>
-	<img src="./logo.jpg" alt="Tehila Beauty"
-		style="height: 80px; width: 80px; border-radius: 40px; align-self: center; margin-top: 100px; margin-bottom: 20px; border-width: 2px; padding: 2px; border-color: pink; object-fit: cover;">
+	<div style="align-self: center; width: 100%; max-width: 600px; padding: 100px 0;">
 
-	<h1 id="title" style="font-family: 'Poiret One'; text-align: center; margin: 0;">
-	</h1>
+		<div id="logo">
+			<style>
+				#logo {
+					background-clip: padding-box;
+					/* !importanté */
+					border: solid 3px transparent;
+					/* !importanté */
+					overflow: hidden;
+					align-items: center;
+					justify-content: center;
+					height: 100px;
+					width: 100px;
+					border-radius: 50px;
+					margin-bottom: 20px;
+					align-self: center;
+				}
 
-	<h2 id="subtitle" style="text-align: center; margin: 0; font-size: 18px; font-weight: 600; margin-bottom: 25px;">
-	</h2>
+				#logo:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					z-index: -1;
+					/* !importanté */
+					border-radius: inherit;
+					/* !importanté */
+					background: linear-gradient(to top, pink, fuchsia);
+				}
+			</style>
 
-	<address id="address"
-		style="text-align: center; margin: 10px; font-style: normal; font-family: monospace; font-size: 14px;">
-	</address>
+			<img src="./logo.jpg" alt="Tehila Beauty"
+				style="flex: 1; object-fit: cover; border-radius: 50px; margin: 3px; padding: 3px; background-color: black;">
+		</div>
 
-	<b id="infos" style="text-align: center; margin-bottom: 20px;">
-	</b>
+		<h1 id="title" style="font-family: 'Poiret One'; text-align: center; margin: 0;">
+		</h1>
 
-	<a class="flexbox"
-		style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; background-image: linear-gradient(to top right, #25D366, #075E54); border-radius: 9px;"
-		href="https://wa.me/972587804232">
+		<h2 id="subtitle"
+			style="text-align: center; margin: 0; font-size: 18px; font-weight: 600; margin-bottom: 50px;">
+		</h2>
 
-		<img src="./whatsapp.png" alt="whatsapp"
-			style="object-fit: cover; height: 30px; width: 30px; margin-right: 20px;">
+		<address id="address"
+			style="text-align: center; margin: 10px; font-style: normal; font-family: monospace; font-size: 14px;">
+		</address>
 
-		<span id="contact" style=" color: white; font-weight: bold;"></span>
-	</a>
+		<b id="infos" style="text-align: center; margin-bottom: 20px;">
+		</b>
 
-	<div id="gallery">
+		<a href="https://wa.me/972587804232" target="_blank" class="flexbox"
+			style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; background-image: linear-gradient(to top right, #25D366, #075E54); border-radius: 9px; margin: 50px 0;">
+
+			<img src="./whatsapp.png" alt="whatsapp"
+				style="object-fit: cover; height: 30px; width: 30px; margin-right: 20px;">
+
+			<span id="contact" style=" color: white; font-weight: bold;"></span>
+		</a>
+
+		<div id="gallery" style="flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; margin: 30px 0">
+		</div>
+		<style>
+			#gallery>* {
+				width: 47%;
+				aspect-ratio: 1;
+				border-radius: 10px;
+				margin-bottom: 15px;
+				overflow: hidden;
+			}
+
+			#gallery img {
+				object-fit: cover;
+				flex: 1;
+			}
+		</style>
+
+
+		<a href="https://www.instagram.com/beautyby.tehila/" target="_blank" class="flexbox"
+			style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; border-radius: 9px; background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);">
+
+			<img src="./instagram.png" alt="instagram"
+				style="object-fit: cover; height: 30px; width: 30px; margin-right: 20px;">
+
+			<span id="instagram" style=" color: white; font-weight: bold;"></span>
+		</a>
 	</div>
-
-
-	<a class="flexbox"
-		style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; border-radius: 9px; background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);"
-		href="https://wa.me/972587804232">
-
-		<img src="./instagram.png" alt="instagram"
-			style="object-fit: cover; height: 30px; width: 30px; margin-right: 20px;">
-
-		<span id="instagram" style=" color: white; font-weight: bold;"></span>
-	</a>
-
 </body>
 
 
@@ -156,6 +204,22 @@
 
 	Object.entries(texts)
 		.forEach(([id, text]) => document.getElementById(id).innerText = text);
+
+	const gallery = document.getElementById('gallery');
+	for (let i = 1; i <= 10; i++) {
+		const link = `./gallery/${i}.jpg`;
+		const wrapper = document.createElement('a');
+		wrapper.classList.add('flexbox');
+		wrapper.href = link;
+		wrapper.target = "_blank";
+
+		const img = document.createElement('img');
+		img.src = link;
+		img.alt = "Tehila Beauty";
+
+		wrapper.appendChild(img);
+		gallery.appendChild(wrapper);
+	}
 
 	document.body.style.opacity = 1;
 </script>
