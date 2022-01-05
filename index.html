@@ -59,14 +59,50 @@
 		}
 
 		a {
-			text-decoration: none
+			text-decoration: none;
+			color: white;
 		}
 	</style>
 
 </head>
 
 <body>
-	<div style="align-self: center; width: 100%; max-width: 600px; padding: 100px 0;">
+	<div style="align-self: center; width: 100%; max-width: 600px; padding-bottom: 100px;">
+
+		<div
+			style="flex-direction: row; justify-content: flex-end; margin-bottom: 70px; height: 50px; align-items: center;">
+			<a id="pricing" target="_blank">
+			</a>
+
+			<div style="width: 30px"></div>
+
+			<img id="lang" style="height: 30px; width: 30px; border-radius: 15px; border: 2px solid white;">
+			<div style="width: 15px"></div>
+		</div>
+
+		<div id="langs" class="gone">
+			<style>
+				#langs {
+					background-color: black;
+					border: 1px solid grey;
+					border-radius: 9px;
+					overflow: hidden;
+					position: absolute;
+					top: 50px;
+					width: 150px;
+				}
+
+				#langs>a {
+					font-weight: bold;
+					padding: 20px;
+					font-size: 18px;
+				}
+
+				.gone {
+					display: none;
+				}
+			</style>
+		</div>
 
 		<div id="logo">
 			<style>
@@ -112,20 +148,26 @@
 		</h2>
 
 		<address id="address"
-			style="text-align: center; margin: 10px; font-style: normal; font-family: monospace; font-size: 14px;">
+			style="text-align: center; margin: 10px; font-style: normal; font-family: monospace; font-size: 14px; font-weight: 600;">
 		</address>
 
 		<b id="infos" style="text-align: center; margin-bottom: 20px;">
 		</b>
 
-		<a href="https://wa.me/972587804232" target="_blank" class="flexbox"
-			style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; background-image: linear-gradient(to top right, #25D366, #075E54); border-radius: 9px; margin: 50px 0;">
+		<div style=" margin: 50px 0;">
+			<span id="appointment" style="text-align: center; font-style: italic; margin-bottom: 10px;">
+			</span>
 
-			<img src="./whatsapp.png" alt="whatsapp"
-				style="object-fit: cover; height: 30px; width: 30px; margin-right: 20px;">
+			<a href="https://wa.me/972587804232" target="_blank" class="flexbox"
+				style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; background-image: linear-gradient(to top right, #25D366, #075E54); border-radius: 9px;">
 
-			<span id="contact" style=" color: white; font-weight: bold;"></span>
-		</a>
+				<img src="./whatsapp.png" alt="whatsapp" style="object-fit: cover; height: 30px; width: 30px;">
+
+				<div style="width: 20px"></div>
+
+				<span id="contact" style=" color: white; font-weight: bold;"></span>
+			</a>
+		</div>
 
 		<div id="gallery" style="flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; margin: 30px 0">
 		</div>
@@ -148,8 +190,9 @@
 		<a href="https://www.instagram.com/beautyby.tehila/" target="_blank" class="flexbox"
 			style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; border-radius: 9px; background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);">
 
-			<img src="./instagram.png" alt="instagram"
-				style="object-fit: cover; height: 30px; width: 30px; margin-right: 20px;">
+			<img src="./instagram.png" alt="instagram" style="object-fit: cover; height: 30px; width: 30px;">
+
+			<div style="width: 20px"></div>
 
 			<span id="instagram" style=" color: white; font-weight: bold;"></span>
 		</a>
@@ -160,50 +203,95 @@
 <script>
 	const allTexts = {
 		fr: {
+			pricing: "Mes tarifs",
 			title: "Tehila Beauty",
 			subtitle: "Esthéticienne",
 			address: "Talpiot / Arnona, Jerusalem",
 			infos: "Manucure, pédicure, cils et épilation",
-			contact: "Prendre rendez-vous",
+			appointment: "Prendre rendez-vous?",
+			contact: "Contactez moi",
 			instagram: "Voir plus ›"
 		},
 
 		en: {
+			pricing: "Pricing",
 			title: "Tehila Beauty",
 			subtitle: "Beautician",
 			address: "Talpiot / Arnona, Jerusalem",
 			infos: "Nails, waxing & lash-lifting",
-			contact: "Make an appointment",
+			appointment: "Want an appointment?",
+			contact: "Contact me",
 			instagram: "See more ›"
 		},
 
 		he: {
-
+			pricing: "המחירים",
+			title: "Tehila Beauty",
+			subtitle: "יפאית",
+			address: "נמצת בתלפיות \ ארנונה, ירושלים",
+			infos: "ציפורניים, שעווה והרמת ריסים",
+			appointment: "רוצה לקבוע תור?",
+			contact: "תהיה בקשר",
+			instagram: "יש עודיש עוד יותר ›"
 		},
 	};
 
-	const language = (() => {
+	const acceptedLangs = {
+		en: 'English',
+		fr: 'Français',
+		he: 'עיברית',
+	};
+
+	const lang = (() => {
 		const defaultLang = 'en';
-		const acceptedLangs = {
-			en: true,
-			fr: true,
-			he: true,
-		};
+		const isAnAcceptedLang = lang => Boolean(acceptedLangs[lang]);
+
+		const url = new URL(this.location.href);
+		const selectedLang = url.searchParams.get('lang');
+		if (isAnAcceptedLang(selectedLang))
+			localStorage.lang = selectedLang;
 
 		const browserLang = (window.navigator.userLanguage || window.navigator.language)?.split('-')[0];
 		let lang = localStorage.lang || browserLang;
-		if (!acceptedLangs[lang])
+		if (!isAnAcceptedLang(lang))
 			lang = defaultLang;
+
 		return lang;
 	})();
 
+	const otherLangs = Object.keys(acceptedLangs).filter(otherLang => otherLang !== lang);
 
-	document.documentElement.setAttribute("lang", language);
 
-	const texts = allTexts[language];
+	document.documentElement.setAttribute("lang", lang);
+	const isRTL = lang == 'he';
+	document.body.style.direction = isRTL ? "rtl" : "ltr";
+
+	const langButton = document.getElementById('lang');
+	langButton.src = `./lang/${lang}.png`;
+	const langsDropdown = document.getElementById('langs');
+	langsDropdown.style[isRTL ? 'left' : 'right'] = "15px";
+	langButton.onclick = () => langsDropdown.classList.toggle("gone");
+	window.addEventListener('click', event => {
+		if (event.target != langButton)
+			langsDropdown.classList.add("gone");
+	});
+
+	otherLangs.forEach(lang => {
+		const langOption = document.createElement('a');
+		langOption.innerText = acceptedLangs[lang];
+		const target = new URL(this.location.href);
+		target.searchParams.set('lang', lang);
+		langOption.href = target.href;
+		langsDropdown.appendChild(langOption);
+	});
+
+
+	const texts = allTexts[lang];
 
 	Object.entries(texts)
 		.forEach(([id, text]) => document.getElementById(id).innerText = text);
+
+	document.getElementById('pricing').href = `./pricing/${lang === 'fr' ? 'fr' : 'en'}.pdf`;
 
 	const gallery = document.getElementById('gallery');
 	for (let i = 1; i <= 10; i++) {
