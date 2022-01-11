@@ -159,7 +159,7 @@
 			<span id="appointment" style="text-align: center; font-style: italic; margin-bottom: 10px;">
 			</span>
 
-			<a href="https://wa.me/972587804232" target="_blank" class="flexbox"
+			<a id="whatsapp" href="https://wa.me/972587804232" target="_blank" class="flexbox"
 				style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; background-image: linear-gradient(to top right, #25D366, #075E54); border-radius: 9px;">
 
 				<img src="./whatsapp.png" alt="whatsapp" style="object-fit: cover; height: 30px; width: 30px;">
@@ -311,6 +311,33 @@
 	}
 
 	document.body.style.opacity = 1;
+</script>
+
+<script type="module">
+	// Import the functions you need from the SDKs you need
+	import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
+	import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-analytics.js";
+	// TODO: Add SDKs for Firebase products that you want to use
+	// https://firebase.google.com/docs/web/setup#available-libraries
+
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	const firebaseConfig = {
+		apiKey: "AIzaSyB4eGZtqApnNJ73ow1Gq9rwTvWGMqDNBYA",
+		authDomain: "tehila-beauty.firebaseapp.com",
+		projectId: "tehila-beauty",
+		storageBucket: "tehila-beauty.appspot.com",
+		messagingSenderId: "502956255477",
+		appId: "1:502956255477:web:88fa1e24d7974933ef3dbc",
+		measurementId: "G-4X5M0DFBM4"
+	};
+
+	// Initialize Firebase
+	const app = initializeApp(firebaseConfig);
+	const analytics = getAnalytics(app);
+
+	const whatsappButton = document.getElementById('whatsapp');
+	whatsappButton.addEventListener('click', () => logEvent(analytics, 'whatsapp_clicked'));
 </script>
 
 </html>
