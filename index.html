@@ -112,9 +112,9 @@
 			<style>
 				#logo {
 					background-clip: padding-box;
-					/* !importanté */
+					/* !important */
 					border: solid 3px transparent;
-					/* !importanté */
+					/* !important */
 					overflow: hidden;
 					align-items: center;
 					justify-content: center;
@@ -133,9 +133,9 @@
 					bottom: 0;
 					left: 0;
 					z-index: -1;
-					/* !importanté */
+					/* !important */
 					border-radius: inherit;
-					/* !importanté */
+					/* !important */
 					background: linear-gradient(to top, pink, fuchsia);
 				}
 			</style>
@@ -163,7 +163,7 @@
 			</span>
 
 			<a id="whatsapp" href="https://wa.me/972587804232" target="_blank" class="flexbox"
-				style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; background-image: linear-gradient(to top right, #25D366, #075E54); border-radius: 9px;">
+				style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; background-image: linear-gradient(to top right, #0a897a, #25D366); border-radius: 9px;">
 
 				<img src="./whatsapp.png" alt="whatsapp" style="object-fit: cover; height: 30px; width: 30px;">
 
@@ -212,7 +212,7 @@
 			subtitle: "Esthéticienne",
 			address: "Talpiot / Arnona, Jerusalem",
 			infos: "Manucure, pédicure, cils et épilation",
-			appointment: "Prendre rendez-vous?",
+			appointment: "Pour prendre rendez-vous 👇🏻",
 			contact: "Contactez moi",
 			instagram: "Voir plus ›"
 		},
@@ -223,7 +223,7 @@
 			subtitle: "Beautician",
 			address: "Talpiot / Arnona, Jerusalem",
 			infos: "Nails, waxing & lash-lifting",
-			appointment: "Want an appointment?",
+			appointment: "To take an appointment 👇🏻",
 			contact: "Contact me",
 			instagram: "See more ›"
 		},
@@ -234,9 +234,9 @@
 			subtitle: "יפאית",
 			address: "נמצת בתלפיות \ ארנונה, ירושלים",
 			infos: "ציפורניים, שעווה והרמת ריסים",
-			appointment: "רוצה לקבוע תור?",
-			contact: "תהיה בקשר",
-			instagram: "יש עודיש עוד יותר ›"
+			appointment: "לקבוע תור 👇🏻",
+			contact: "תישלחי לי ",
+			instagram: "יש עוד ›"
 		},
 	};
 
@@ -342,6 +342,7 @@
 
 	const whatsappButton = document.getElementById('whatsapp');
 	whatsappButton.addEventListener('click', () => logEvent(analytics, 'whatsapp_clicked'));
+	// gtag('config', 'AW-786194794');
 </script>
 
 </html>
