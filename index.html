@@ -191,7 +191,7 @@
 		</style>
 
 
-		<a href="https://www.instagram.com/beautyby.tehila/" target="_blank" class="flexbox"
+		<a id="instagram" href="https://www.instagram.com/beautyby.tehila/" target="_blank" class="flexbox"
 			style="align-self: center; flex-direction: row; align-items: center; padding: 0 20px; height: 50px; border-radius: 9px; background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);">
 
 			<img src="./instagram.png" alt="instagram" style="object-fit: cover; height: 30px; width: 30px;">
@@ -233,7 +233,7 @@
 			title: "Tehila Beauty",
 			subtitle: "יפאית",
 			address: "נמצת בתלפיות \ ארנונה, ירושלים",
-			infos: "בואו לחוות חווית יופי וטיפוח אישי בסלון הפרטי שלי! אני מציעה שירותי מניקור, ווקסינג והרמת ריסים ברמה הגבוהה ביותר. בסלון שלי תוכלו להתפנק ולהרגיש מיוחדים ומטופחים עם שירותים מקצועיים ובאווירה נעימה ושקטה.",
+			infos: "בסלון שלי את יכולה להתפנק עם שירותים מקצועיים באווירה נעימה ושקטה.",
 			appointment: "לקבוע תור 👇🏻",
 			contact: "תישלחי לי הודעה",
 			instagram: "יש עוד ›"
@@ -343,6 +343,9 @@
 	const whatsappButton = document.getElementById('whatsapp');
 	whatsappButton.addEventListener('click', () => logEvent(analytics, 'whatsapp_clicked'));
 	// gtag('config', 'AW-786194794');
+
+	const instaButton = document.getElementById('instagram');
+	instaButton.addEventListener('click', () => logEvent(analytics, 'instagram_clicked'));
 </script>
 
 </html>
